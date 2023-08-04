@@ -10,22 +10,22 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
         *{
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box:
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box:
         }
 
         body{
-           font-family: 'Roboto', sans-serif;
-           font-weight: 200;
-           color: var(--tg-theme-text-color);
-           backgroung: var(--tg-theme-bg-color);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 200;
+            color: var(--tg-theme-text-color);
+            backgroung: var(--tg-theme-bg-color);
         }
 
         #main {
-             wigth: 100%;
-             padding: 20px;
-             text-align: center;
+            wigth: 100%;
+            padding: 20px;
+            ext-align: center;
         }
 
         h1 {
@@ -57,8 +57,26 @@
             background: var(--tg-theme-button-text-color);
         }
 
+        #form {
+            display: name;
+            text-align: center;
+        }
+
+        input{
+            width: 90%;
+            outline: none;
+            margin: 10px 5%;
+            padding: 15px 10px;
+            font-size: 14px;
+            border: 2px solid slilver;
+            border-radius: 5px;
+        }
+
         button:hover{
             background: var(--tg-theme-secondary-bg-color);
+        }
+        input:focus{
+            border-color: #db5d5d;
         }
     </style>
 </head>
@@ -69,7 +87,27 @@
         <p>Что-то  важное.</p>
         <button id ="bud">Купить</button>
     </div>
+    <form id="form">
+        <input types="text" placeholder="Имя" id="user_name">
+        <input types="text" placeholder="Email" id="user_email">
+        <input types="text" placeholder="Никнейм телеграм" id="user_tg">
+        <button id="order">Оформить</button>
+    </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let buy = document.getElementById("buy");
+        let order = document.getElementById("order");
 
+        buy.addEventListener("click",() => {
+            document.getElementById("main").style.display ="none:;
+            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " "+ tg.initDataUnsafe.user.last_name;
+        });
+
+        order.addElementListener("click", () =>{
+        tg.close();
+        });
+
+    </script>
 </body>
 </html>
