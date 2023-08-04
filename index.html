@@ -84,14 +84,13 @@
 <body>
     <div id ="main">
         <h1>Онлайн магазин</h1>
-        <img src="https://img.freepik.com/premium-vector/clean-tooth-logo-dental-clinic-logo-dentist-logo_267160-517.jpg">
-        <p>Заявка на осмотр к стамотологу.</p>
+        <img src="https://www.digiseller.ru/preview/1121084/p1_3775613_8ce4df5c.jpg">
+        <p>Заявка на осмотр к стомотологу.</p>
         <button id ="buy">К оформлению</button>
     </div>
     <form id="form">
         <input type="text" placeholder="Имя" id="user_name">
         <input type="text" placeholder="Email" id="user_email">
-        <input type="text" placeholder="Номер телефона" id="user_phone">
         <input type="text" placeholder="Никнейм телеграм" id="user_tg">
         <button id="order">Оформить</button>
     </form>
@@ -112,7 +111,6 @@
             document.getElementBuId("error").innerText = '';
             let name = document.getElementById("user_name").value;
             let email = document.getElementById("user_email").value;
-            let phone = document.getElementById("user_phone").value;
             let tgname = document.getElementById("user_tg").value;
             if(name.length <1){
                 document.getElementById("error").innerText = "Ошибка в имени";
@@ -122,10 +120,6 @@
                 document.getElementById("error").innerText = "Ошибка в email";
                 return;
             }
-            if(phone.length <1){
-                document.getElementById("error").innerText = "Ошибка в номере телефона";
-                return;
-            }
             if(tgname.length <1){
                 document.getElementById("error").innerText = "Ошибка в нике телеграмма";
                 return;
@@ -133,7 +127,6 @@
             let data = {
                 name:name,
                 email:email,
-                phone:phone,
                 tgname:tgname
             }
 
