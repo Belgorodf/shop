@@ -57,6 +57,10 @@
             background: var(--tg-theme-button-text-color);
         }
 
+        button:hover{
+            background: var(--tg-theme-secondary-bg-color);
+        }
+
         #form {
             display: name;
             text-align: center;
@@ -72,9 +76,6 @@
             border-radius: 5px;
         }
 
-        button:hover{
-            background: var(--tg-theme-secondary-bg-color);
-        }
         input:focus{
             border-color: #db5d5d;
         }
@@ -100,12 +101,13 @@
         let order = document.getElementById("order");
 
         buy.addEventListener("click",() => {
-            document.getElementById("main").style.display ="none:;
+            document.getElementById("main").style.display = "none";
+            document.GgetElementById("form").style.display ="block";
             document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " "+ tg.initDataUnsafe.user.last_name;
         });
 
         order.addElementListener("click", () =>{
-        tg.close();
+            tg.close();
         });
 
     </script>
